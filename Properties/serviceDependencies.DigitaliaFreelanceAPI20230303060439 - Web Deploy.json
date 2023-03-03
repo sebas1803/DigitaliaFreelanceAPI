@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/DigitaliaFreelanceAPIapi/apis/DigitaliaFreelanceAPI",
+      "type": "apis.azure"
+    },
+    "mssql1": {
+      "secretStore": null,
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/digitalia-freelance/databases/DigitaliaFreelanceDB",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:DefaultConnectionDeployment",
+      "dynamicId": null
+    }
+  }
+}

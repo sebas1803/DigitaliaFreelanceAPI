@@ -3,8 +3,10 @@ using DigitaliaFreelanceAPI.Repositories;
 
 namespace DigitaliaFreelanceAPI.Services {
     public class ReceiptsService : IReceiptsService {
+        private readonly HttpClient _httpClient;
         private readonly IReceiptsRepository _receiptsRepository;
-        public ReceiptsService(IReceiptsRepository receiptsRepository) {
+        public ReceiptsService(HttpClient httpClient, IReceiptsRepository receiptsRepository) {
+            _httpClient = httpClient;
             _receiptsRepository = receiptsRepository;
         }
         public async Task<Receipt> CreateReceipt(Receipt receipt) {
