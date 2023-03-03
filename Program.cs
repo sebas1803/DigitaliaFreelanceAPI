@@ -25,6 +25,7 @@ builder.Services.AddSwaggerGen(c => {
 });
 builder.Services.AddCors(options => options.AddPolicy(name: "FreelancerOrigins", policy => {
     policy.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader();
+    policy.WithOrigins("https://develop--astounding-gumption-9226af.netlify.app/").AllowAnyMethod().AllowAnyHeader();
 }));
 
 var app = builder.Build();
