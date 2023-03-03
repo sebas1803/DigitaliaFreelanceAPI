@@ -24,8 +24,13 @@ builder.Services.AddSwaggerGen(c => {
     });
 });
 builder.Services.AddCors(options => options.AddPolicy(name: "FreelancerOrigins", policy => {
-    policy.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader();
-    policy.WithOrigins("https://astounding-gumption-9226af.netlify.app/").AllowAnyMethod().AllowAnyHeader();
+    //policy.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader();
+    //policy.WithOrigins("https://astounding-gumption-9226af.netlify.app").AllowAnyMethod().AllowAnyHeader();
+    policy
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .SetIsOriginAllowed(origin => true) // allow any origin 
+    .AllowCredentials();
 }));
 
 var app = builder.Build();
